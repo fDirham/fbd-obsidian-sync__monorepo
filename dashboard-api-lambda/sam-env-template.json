@@ -1,0 +1,14 @@
+{
+  "Parameters": {
+    "COGNITO_REGION": "",
+    "COGNITO_CLIENT_SECRET": "",
+    "COGNITO_CLIENT_ID": "",
+    "COGNITO_USERPOOL_ID": "",
+    "S3_REGION": "",
+    "S3_BUCKET": "",
+    "DYNAMODB_REGION": "",
+    "DYNAMODB_TABLE": "",
+    "CONFIG_MAX_VAULT_NAME_LENGTH": "",
+    "CONFIG_MAX_VAULTS_PER_USER": ""
+  }
+}

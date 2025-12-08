@@ -1,0 +1,25 @@
+{
+  "yaml.customTags": [
+    "!And",
+    "!If",
+    "!Not",
+    "!Equals",
+    "!Or",
+    "!FindInMap sequence",
+    "!Base64",
+    "!Cidr",
+    "!Ref",
+    "!Sub",
+    "!GetAtt",
+    "!GetAZs",
+    "!ImportValue",
+    "!Select",
+    "!Split",
+    "!Join sequence"
+  ],
+  "files.associations": {
+    "**/dashboard-api-lambda/template.yml": "yaml",
+    "**/cdk.out/**/*.template.json": "json"
+  },
+  "typescript.disableAutomaticTypeAcquisition": true
+}
