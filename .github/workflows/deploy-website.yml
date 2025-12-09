@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - "website/**" # Only run if something in website/ changes
+      - "fbd-obsidian-sync-website/**"
 
 jobs:
   deploy:
@@ -22,11 +22,11 @@ jobs:
           node-version: "18"
 
       - name: Install dependencies
-        working-directory: website
+        working-directory: fbd-obsidian-sync-website
         run: npm ci
 
       - name: Build project
-        working-directory: website
+        working-directory: fbd-obsidian-sync-website
         run: npm run build
 
       # AWS credentials from GitHub Secrets
@@ -38,4 +38,4 @@ jobs:
 
       - name: Sync dist/ with S3 bucket
         run: |
-          aws s3 sync website/dist s3://${{ env.BUCKET_NAME }} --delete
+          aws s3 sync fbd-obsidian-sync-website/dist s3://${{ env.BUCKET_NAME }} --delete
