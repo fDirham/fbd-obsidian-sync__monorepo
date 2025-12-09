@@ -26,7 +26,7 @@ function App() {
       </div>
       <div className="faq">
         <h2>FAQ</h2>
-        <h3>How do I use this? Test deploy</h3>
+        <h3>How do I use this?</h3>
         <ol>
           <li>Install the plugin (works on mobile too!).</li>
           <li>Open the plugin settings and create an account or log in.</li>
