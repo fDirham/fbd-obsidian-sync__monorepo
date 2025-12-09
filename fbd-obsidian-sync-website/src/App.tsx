@@ -44,6 +44,11 @@ function App() {
           Future versions will be more complex by calculating changesets between
           syncs to allow for auto syncing, but this basic logic is good enough.
         </p>
+        <h3>How is my data stored?</h3>
+        <p>
+          Your obsidian vault gets converted into an encrypted zip in the cloud
+          that is not read.
+        </p>
         <h3>What was this built with?</h3>
         <p>
           <ul>

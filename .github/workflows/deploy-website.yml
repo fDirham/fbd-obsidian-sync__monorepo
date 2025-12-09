@@ -15,7 +15,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      BUCKET_NAME: my-app-bucket
+      BUCKET_NAME: fbd-obsidian-sync--prod-website
 
     steps:
       - name: Checkout repository
