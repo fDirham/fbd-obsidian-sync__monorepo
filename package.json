@@ -9,6 +9,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:lambda": "cd dashboard-api-lambda && sam build",
+    "build:website": "cd fbd-obsidian-sync-website && npm run build",
     "deploy:dev": "cd cdk && AWS_PROFILE=dev cdk deploy --context stageName=dev",
     "deploy:staging": "cd cdk && AWS_PROFILE=staging cdk deploy --context stageName=staging",
     "deploy:prod": "cd cdk && AWS_PROFILE=prod cdk deploy --context stageName=prod"
