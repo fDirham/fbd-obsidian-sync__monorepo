@@ -1,0 +1,41 @@
+name: Deploy Website to S3
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "website/**" # Only run if something in website/ changes
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      BUCKET_NAME: my-app-bucket
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      - name: Install dependencies
+        working-directory: website
+        run: npm ci
+
+      - name: Build project
+        working-directory: website
+        run: npm run build
+
+      # AWS credentials from GitHub Secrets
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::847221641698:role/fbd-obsidian-sync__gh-role
+          aws-region: us-west-2
+
+      - name: Sync dist/ with S3 bucket
+        run: |
+          aws s3 sync website/dist s3://${{ env.BUCKET_NAME }} --delete
